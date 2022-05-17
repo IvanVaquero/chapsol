@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.bg-titles {
+  font-weight: bold;
+  position: absolute;
+  z-index: 2;
+  top: 15%;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.rooms-info{
+  text-align: left;
+  margin-left: -12px;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+.main-text{
+  font-size: 50px;
+}
+
+.cont-place{
+    width: 210px;
+    height: 35px;
+}
+.cont-in{
+    width: 90px;
+    height: 35px;
+}
+.cont-out{
+    width: 90px;
+    height: 35px;
+}
+.cont-guest{
+    width: 220px;
+    height: 35px;
+}
+.cont-guest-label{
+  height: 35px;
+}
+.cont-search{
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #69b634 0%,#69b634 30%,#1fb5ad 100%);
+}
+
+.contenedor-image{
+  margin-left: 50px;
+  margin-top: 10px;
+  height: 80px;
+  width: auto;
+}
+.logo-left{
+  float:right;
+  width:125px;
+  height:64px;
+}
+.content-form{
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+.circle-div{
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  border: 2px solid #69b634;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+.icono-house{
+  padding-top: 14px;
+  height: 24px;
+  color: #69b634;
+}
+.grid_gaps {
+  column-gap: 50px;
+  row-gap: 30px;
+}
+.card {
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 6px;
+  color:#333333;
+  border: none;
+  /* background: #888888 */
+}
+.card img {
+  max-height: 220px;
+  object-fit: contain;
+  width: auto;
+  margin-bottom: auto;
+  margin-top: 1em;
+  filter: drop-shadow(2px 4px 6px black);
+}
+a{
+  text-decoration: none;
+  color: white;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+a:hover{
+  text-decoration: none;
+  color: white;
+  padding: 0 !important;
+  margin: 0 !important;
+}

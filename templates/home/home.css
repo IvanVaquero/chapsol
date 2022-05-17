@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.bg-image {
+  overflow: hidden;
+  background-image: url("images/room_main.jpg");
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  height: 60%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-whiteswd {
+  overflow: hidden;
+  -webkit-box-shadow: 0px -1px 20px 5px #000000;
+  box-shadow: 0px -1px 20px 5px #000000;
+  background-color: #ececec;
+  height: 40%; 
+}
+
+.bg-textos {
+  background-color: rgb(0,0,0);
+  background-color: rgb(0 0 0 / 72%);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  border: 3px solid #3a3a3a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 35%);
+  z-index: 2;
+  width: 70%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.bg-titles {
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  width: 70%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.main-text{
+  font-size: 50px;
+}
+
+.cont-place{
+    width: 300px;
+    height: 45px;
+}
+.cont-in{
+    width: 150px;
+    height: 45px;
+}
+.cont-out{
+    width: 150px;
+    height: 45px;
+}
+.cont-guest{
+    width: 300px;
+    height: 45px;
+}
+.cont-search{
+    width: 100px;
+    height: 45px;
+    background: linear-gradient(135deg, #69b634 0%,#69b634 30%,#1fb5ad 100%);
+    border: none !important;
+}
+.logo{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top:2%;
+    left: 13.2%;
+    background-image: url("images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-button{
+  width: 220px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 7px;
+  border: none;
+  color: white;
+  -webkit-box-shadow: 0 .5rem 1rem #00000096;
+  box-shadow: 0 .5rem 1rem #00000096;
+  background: linear-gradient(135deg, #69b634 0%,#69b634 30%,#1fb5ad 100%);
+}
+.main-button:hover{
+  animation: colors 3s ease-in-out;
+  outline: 2px solid white;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+  color: white;
+}

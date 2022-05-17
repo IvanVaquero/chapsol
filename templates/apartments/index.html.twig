@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapp - Apartments{% endblock %}
+
+{% block body %}
+
+{% block stylesheets %}
+        <link href="{{ asset('../templates/apartments/apartments.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+<nav class="navbar bg-light fixed-top">
+    <div class="content-form d-flex justify-content-between align-items-center">
+        <div class="contenedor-image">
+            <a href="{{ path('home') }}">
+                <img src="\chapsol\templates\apartments\images\logo.png" alt="Smiley face" class="logo-left">
+            </a>
+        </div>
+        <form action="apartments" method="get">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="ps-1">
+                <input type="text" value="{{location}}" class="form-control cont-place" name="location" placeholder="Where do you want to go?">
+            </div>
+            <div class="ps-1">
+                <input type="text" value="{{entrada}}" placeholder="Check In" class="form-control cont-in" name="entrada" onblur="(this.type='text')" onfocus="(this.type='date')">
+            </div>
+            <div class="ps-1">
+                <input type="text" value="{{salida}}" placeholder="Check Out" class="form-control cont-out" name="salida" onblur="(this.type='text')" onfocus="(this.type='date')">
+            </div>       
+             <div class="input-group cont-guest ps-1">
+                <label class="input-group-text cont-guest-label" for="guest">Guests</label>
+                <select class="form-select cont-guest" name="guest">
+                    <option value="0">Add guests...</option>
+                    {% for i in 1..5 %}
+                        <option value="{{i}}" {% if guest == i %} selected {% endif %} >{{i}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="ps-1">
+                <button type="submit" class="btn btn-primary cont-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        </form>
+        <div class="me-4">
+            <a href="{{ path('home') }}">
+                <div class="circle-div align-items-center">
+                    <i class="fa-solid fa-house icono-house"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="bg-titles">
+    <div class="container">
+        <p class="rooms-info">{{total}} Available rooms</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-auto grid_gaps">
+            {% for room in rooms %}
+            <a href="{{ path('room', {id: room.id, location: location, entrada: entrada, salida: salida, guest: guest, price: room.nightPrice}) }}">
+                <div class="card" style="width: 18rem;">
+                    <img src="\chapsol\templates\room\images\room1.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{room.title}}</h5>
+                        <p class="card-text">{{ room.description|length > 60 ? room.description|slice(0, 60) ~ '...' : room.description  }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> {{room.location}}</li>
+                        <li class="list-group-item"><i class="fa-solid fa-bed"></i>  {{room.type}}</li>
+                        <li class="list-group-item"><i class="fa-solid fa-people-group"></i>  {{room.maxGuest}} guests</li>
+                    </ul>
+                    <div class="card-footer bg-transparent">{{room.nightPrice}}€ / night</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

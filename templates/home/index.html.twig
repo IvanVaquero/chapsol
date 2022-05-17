@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapp - Home{% endblock %}
+
+{% block body %}
+
+{% block stylesheets %}
+        <link href="{{ asset('../templates/home/home.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+<div class="bg-image"></div>
+<div class="bg-whiteswd"></div>
+<div class="logo"></div>
+<div class="bg-titles">
+    <div class ="d-flex flex-column justify-content-center">
+        <div class="p-1">
+            <h1 class="fw-bold main-text">WELCOME HOME</h1>
+        </div>
+        <div class="p-1">
+            <h3>Book your room with CHAPP Solutions</h3>
+        </div>
+        <div class="pt-3">
+            <div>
+                <button class="main-button" ><a href="{{ path('apartments') }}">Find your Room</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-textos">
+<form action="apartments" method="get" >
+    <div class ="d-flex flex-row justify-content-center">
+        <div class="p-1">
+            <input type="text" class="form-control cont-place" name="location" placeholder="Where do you want to go?">
+        </div>
+        <div class="p-1">
+            <input type="text" placeholder="Check In" class="form-control cont-in" name="entrada" onblur="(this.type='text')" onfocus="(this.type='date')">
+        </div>
+        <div class="p-1">
+            <input type="text" placeholder="Check Out" class="form-control cont-out" name="salida" onblur="(this.type='text')" onfocus="(this.type='date')">
+        </div>
+        <div class="input-group mb-3 cont-guest p-1">
+            <label class="input-group-text" for="guest">Guests</label>
+            <select class="form-select cont-guest" name="guest">
+                <option value="0">Add guests...</option>
+                {% for i in 1..5 %}
+                    <option value="{{i}}" >{{i}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="p-1">
+            <button type="submit" class="btn btn-primary cont-search">Search</button>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}
